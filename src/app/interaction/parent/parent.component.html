@@ -1,0 +1,43 @@
+<h4>Try "Reverse Flow" link</h4>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div class="panel-title">Component Interaction</div>
+    <div class="panel-link">
+      <a (click)="dataTransferP2C = !dataTransferP2C" style="cursor: pointer">
+        Reverse Flow
+      </a>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div *ngIf="dataTransferP2C; else secC2P" class="margin-three-percent">
+      <h4>Parent to Child</h4>
+      <div class="margin-three-percent row">
+        <div class="col-sm-6">
+          <input style="width: 90%" type="text" [(ngModel)]="valueFromParent" />
+        </div>
+        <div class="col-sm-6">Pass data to child.</div>
+      </div>
+    </div>
+    <ng-template #secC2P>
+      <h4>Child to Parent</h4>
+      <div
+        *ngIf="!valueFromChild; else valueReceived"
+        class="margin-three-percent"
+      >
+        Data from Child will be placed here.
+      </div>
+      <ng-template #valueReceived>
+        Data from Child: {{ valueFromChild }}
+      </ng-template>
+    </ng-template>
+
+    <div style="margin-top: 20px">
+      <app-child
+        *ngFor="let item of array_of_children; let i = index"
+        [valueFromParent]="valueFromParent"
+        [dataTransferP2C]="dataTransferP2C"
+        (childValueChanged)="onChildValueUpdated($event)"
+      ></app-child>
+    </div>
+  </div>
+</div>

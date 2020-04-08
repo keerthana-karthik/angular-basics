@@ -1,0 +1,20 @@
+<div><h4>Key Snippets</h4></div>
+<pre>
+    Services allows you to centralize data, methods and properties between components throughout the application.
+
+    Common data is placed, managed and exposed in service via method.
+    Services needs to be provided in app.module.ts to have a common instance throughout the application.
+    In @Component as option if data is shared only within component and its children.
+
+    In @NgModule for sharing data at entire Module level and in modules this module is imported
+    In app.module.ts to share data in entire application
+    This has to be injected in Component or Another Service to be used.
+
+    To Use a Service in another service @Injectable annotation needs to be added on Injectable service.
+    and providedIn = "root" as parameter to @Injectable will be alternative to providing the same in app.modules.ts
+
+    Pushing data from Component A to B
+    Using EventEmitter and emiting events from Service.
+    Component A can invoke method which emits the event and pushes data.
+    Component B can subscribe to event and access the data emitted in Service.
+</pre>

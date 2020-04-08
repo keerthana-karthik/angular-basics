@@ -1,0 +1,105 @@
+<main>
+  <!--  CTA  -->
+  <section class="cta-img" id="cta-img">
+    <div class="cta-banner">
+      <div class="cta-wrapper">
+        <h1>Angular Core Concepts Demo</h1>
+        <div
+          style="border: 1px solid white; padding: 5px; text-align: center; color: white"
+        >
+          <h4>LOGGED IN</h4>
+          <label class="switch">
+            <input
+              type="checkbox"
+              id="loggedInChkBx"
+              (change)="onLoggedInChkBxChange()"
+              [checked]="isLoggedIn"
+            />
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="products-wrap">
+          <div class="product-item">
+            <div class="product-description">
+              <p class="product-label">Template Driven Form</p>
+              <hr class="hr-line" />
+              <ul class="item-type">
+                <li>Angular infers form object from DOM</li>
+                <li>Uses FormsModule</li>
+                <li>ngModel and name attributes added to elements</li>
+                <li>(ngSubmit)="onSubmit()" #ref="ngForm" added to form</li>
+                <li>NgForm classes in ts</li>
+              </ul>
+            </div>
+            <a routerLink="/demo/forms/template">More</a>
+          </div>
+          <div class="product-item">
+            <div class="product-description">
+              <p class="product-label">Reactive Form</p>
+              <hr class="hr-line" />
+              <ul class="item-type">
+                <li>
+                  Form is created programmaticaly
+                </li>
+                <li>Uses ReactiveFormsModule</li>
+                <li>added to elementss</li>
+                <li>formControlName attribute added to elements</li>
+                <li>(ngSubmit)="onSubmit()" [formGroup]="signForm"</li>
+                <li>FormGroup and FormControl classes in ts</li>
+              </ul>
+            </div>
+            <a routerLink="/demo/forms/template">More</a>
+          </div>
+          <div class="product-item">
+            <div class="product-description">
+              <p class="product-label">Component Interaction</p>
+              <hr class="hr-line" />
+              <ul class="item-type">
+                <li>Binding Data from Parent to child</li>
+                <li>@Input('aliasName') in ts, [aliasName]=value in html</li>
+                <li>Emit event triggered in child and handle in parent</li>
+                <li>
+                  @Output('aliasName') in ts, (aliasName)="method($event)" in
+                  html
+                </li>
+              </ul>
+            </div>
+            <a routerLink="/demo/interaction/p2c">More</a>
+          </div>
+          <div class="product-item">
+            <div class="product-description">
+              <p class="product-label">Data Sharing With Services</p>
+              <hr class="hr-line" />
+              <ul class="item-type">
+                <li>
+                  @Injectable with providedIn: 'root' or providers: [] in
+                  app.module.ts
+                </li>
+                <li>Using EventEmitter and emiting events from Service</li>
+                <li>
+                  Component A can invoke method which emits the event and pushes
+                  data
+                </li>
+                <li>
+                  Component B can subscribe to event and access the data emitted
+                  in Service
+                </li>
+              </ul>
+            </div>
+            <a routerLink="/demo/interaction/services">More</a>
+          </div>
+        </div>
+      </div>
+
+      <!--   end cta-wrapper     -->
+    </div>
+    <!--   end cta-banner     -->
+  </section>
+</main>
+
+<footer>
+  <div id="footer">
+    Created by Keerthana Sureshkumar
+  </div>
+</footer>

@@ -1,0 +1,39 @@
+<div><h4>Key Snippets</h4></div>
+<pre>
+    <b>Property Binding:</b> [property]="data"
+
+    <b>Event Binding:</b> (event)="expression"
+
+    <b>Two way Binding:</b> [(ngModel)] = "modelName", Uses FormsModule
+
+    <b>Parent to child Data Transfer</b>
+        @Input for Binding to Custom Properties
+        <b>@Input('aliasName')</b> in ts, <b>[aliasName]</b> in html
+        <b>In Parent Component</b>
+            &lt;app-child
+                *ngFor="let item of array_of_children; let i = index"
+                <b>[valueFromParent]</b>="valueFromParent"
+                (childValueChanged)="onChildValueUpdated($event)"&gt;
+            &lt;/app-child&gt;
+        <b>In Child Componnet</b>
+            <b>@Input() valueFromParent</b>: string;
+
+    <b>Child to Parent Data Transfer</b>
+        @Output for Binding to Custom Events
+        <b>@Output('aliasName')</b> in ts, <b>(aliasName)</b> in html
+        <b>In Child Componnet</b>
+            <b>@Output() childValueChanged</b> = new EventEmitter&lt;string&gt;()
+        <b>In Parent Component</b>
+            &lt;app-child
+                *ngFor="let item of array_of_children; let i = index"
+                [valueFromParent]="valueFromParent"
+                <b>(childValueChanged)</b>="onChildValueUpdated($event)"&gt;
+            &lt;/app-child&gt;
+        
+    <b>@ViewChild</b> for ccess to template and DOM
+        #ref on element in html
+        @ViewChild(ref) ref : ElementRef; as declaration
+        this.ref.nativeElement.value to access value
+        
+
+</pre>

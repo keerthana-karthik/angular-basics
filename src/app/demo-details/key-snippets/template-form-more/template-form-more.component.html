@@ -1,0 +1,24 @@
+<div><h4>Key Snippets</h4></div>
+<pre>
+    To create template driven form add (ngSubmit) and create refetence :
+        &lt;form <b>(ngSubmit)="onNgSubmit()" #f="ngForm"</b>&gt;...&lt;/form&gt;
+
+    To add a control part of NgForm add ngModel and name attributes :
+        &lt;input type="checkbox" <b>ngModel name="chekbx"</b> /&gt;
+
+    To reference a control and conditionally render another section
+        &lt;select ngModel name="selectbox" <b>#selectbox="ngModel"</b>&gt;...&lt;/select&gt;
+        <b>*ngIf="selectbox.control.touched"</b>
+    
+    To get access to template and DOM before any method is triggered
+        <b>@ViewChild("f")</b> templateDrivenForm: NgForm;
+
+    Setting Default
+        <b>templateDrivenForm.setValue</b>(KEY VALUE PAIR AS OBJECT);
+    
+    Controlling Navigation with canDeactivate
+        <b>canDeactivate: [CanFormDeactivateGuard]</b>
+        To use CanFormDeactivateGuard guard for a component
+            create <b>canDeactivate()</b> method within the component.
+
+</pre>

@@ -1,0 +1,10 @@
+.stick-on-top {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.active {
+  color: white !important;
+}

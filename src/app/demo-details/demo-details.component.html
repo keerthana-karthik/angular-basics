@@ -1,0 +1,64 @@
+<div class="row demo-wrapper">
+  <div
+    class="col-sm-8 col-lg-7 col-xl-6"
+    *ngIf="activeDemo === demoType.Services"
+  >
+    <div class="row">
+      <div class="col-sm-12 text-centered-bo">
+        <app-template-driven-form [activeDemoType]="'services'">
+          *ngIf="activeDemo === demoType.Services" ></app-template-driven-form
+        >
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-lg-5 col-xl-6">
+    <router-outlet></router-outlet>
+  </div>
+  <div
+    class="col-sm-8 col-lg-7 col-xl-6"
+    *ngIf="activeDemo != demoType.Services"
+  >
+    <div class="row">
+      <div class="col-sm-12 text-centered-bo">
+        <app-template-form-more
+          *ngIf="activeDemo === demoType.TemplateDriven"
+        ></app-template-form-more>
+
+        <app-reactive-form-more
+          *ngIf="activeDemo === demoType.Reactive"
+        ></app-reactive-form-more>
+
+        <app-component-interaction-more
+          *ngIf="activeDemo === demoType.P2C"
+        ></app-component-interaction-more>
+
+        <app-noauth-message-more
+          *ngIf="activeDemo === demoType.Noauth"
+        ></app-noauth-message-more>
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-sm-12 text-centered-box"
+        *ngIf="
+          displayData &&
+          (activeDemo === demoType.TemplateDriven ||
+            activeDemo === demoType.Reactive)
+        "
+      >
+        <h4>
+          Subscribed using Service on Form Submit
+        </h4>
+
+        <pre class="">
+            {{ displayData }}
+        </pre>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <app-services-more
+      *ngIf="activeDemo === demoType.Services"
+    ></app-services-more>
+  </div>
+</div>

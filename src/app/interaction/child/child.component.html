@@ -1,0 +1,34 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <div class="panel-title">Child Component</div>
+  </div>
+  <div class="panel-body">
+    <div class="margin-three-percent" *ngIf="dataTransferP2C">
+      <div
+        *ngIf="!valueFromParent; else valueReceived"
+        class="margin-three-percent"
+      >
+        Data from Parent will be placed here.
+      </div>
+      <ng-template #valueReceived>
+        Data from Parent: {{ valueFromParent }}
+      </ng-template>
+    </div>
+
+    <div class="margin-three-percent row" *ngIf="!dataTransferP2C">
+      <div class="col-sm-6">
+        <input style="width: 90%" type="text" [(ngModel)]="valueFromChild" />
+      </div>
+      <div class="col-sm-6">
+        <input
+          type="button"
+          class="btn btn-primary btn btn-info"
+          id="id_submit_template_form"
+          name="data_to_parent"
+          value="Emit data to parent"
+          (click)="onChildValueChange()"
+        />
+      </div>
+    </div>
+  </div>
+</div>

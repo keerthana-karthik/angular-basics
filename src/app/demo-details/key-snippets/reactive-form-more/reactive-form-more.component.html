@@ -1,0 +1,16 @@
+<div><h4>Key Snippets</h4></div>
+<pre>
+    To create template driven form add (ngSubmit) and create refetence :
+        &lt;form <b>(ngSubmit)="onNgSubmit()" [formGroup]="reactiveForm"</b>&gt;...&lt;/form&gt;
+        In ts file <b>"this.reactiveForm = new FormGroup("</b>
+
+    To add a control part of NgForm add ngModel and name attributes :
+        &lt;input type="checkbox" <b>formControlName="chekbx""</b> /&gt;
+
+    To reference a control and conditionally render another section
+        In ts file <b>"selectbox: new FormControl(null)"</b>
+        <b>*ngIf="reactiveForm.get('selectbox').touched"</b>
+
+    Setting Default
+        <b>templateDrivenForm.setValue</b>(KEY VALUE PAIR AS OBJECT);
+</pre>

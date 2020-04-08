@@ -1,0 +1,52 @@
+<div><h4>Key Snippets</h4></div>
+<pre>
+    <b>Protecting Routes with canActivate</b>
+        <b>Guard:</b> logic to execute before loading or leaving a route.
+        implements CanActivate class
+        define <b>canActivate method</b> to define guard logic
+    <b>In Routes</b>
+        <b>canActivate : [Guard_Name]</b>
+
+    <b>Protecting Child (Nested) Routes with canActivateChild</b>
+        implements CanActivateChild and define canActivateChild method to protecvt only Children exclude parent
+        canActivateChild in routes
+
+    <b>Controlling Navigation with canDeactivate</b>
+        canDeactivate: [canDeactivateGuard]
+
+    <b>More about Routes
+        const routes: Routes = [];
+        path=' ', component: componentName as object 
+        imports: [RouterModule.forRoot(routes)],
+        exports: [RouterModule]</b>
+
+    <b>routerLink</b> directive to avoid page reload by catching click preventing default and handling
+    
+    <b>Passing param using : in path</b> 
+        path: 'XXX/<b>:PARAM_KEY</b>'
+    <b>fetching route parameters</b> 
+        route: <b>ActivatedRoute</b> in constructor
+
+    <b>Update parameters whenever route parameters changes</b>
+        Using <b>route.params.subscribe</b>
+
+    <b>To programmatically navigate</b>
+        router.<b>navigate</b> 
+        <b>relativeTo</b>: this.activatedRoute as 2nd param to navigate method
+    
+    <b>Passing Query Parameters</b>
+        <b>queryParams</b>: KEY_VALUE_PAIR as object as 2nd param to navigate method
+        Using <b>route.queryParams.subscribe</b> to get query param
+
+    <b>Redirecting and Wildcard Routes</b>
+        <b>path: '**'</b>, catch all paths we don't know, order of path is imp
+
+    <b>Passing Static Data to a Route</b>
+        passing <b>data: KEY_VALUE_PAIR as message: 'value'</b> in routes, message: 'value' as object
+        this.route.<b>data.subscribe</b> to access <b>data['message']</b>
+    <b>Resolving Dynamic Data with the resolve Guard</b>
+        resolver will always render the component in end unlike guard
+        it can fetch data before component is loaded
+        passing <b>resolve: KEY_VALUE_PAIR as key: Resolve Class</b>
+        this.route.<b>data.subscribe</b> to access <b>data['key']</b>
+</pre>
