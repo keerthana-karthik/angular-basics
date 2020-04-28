@@ -1,11 +1,7 @@
 <nav class="navbar navbar-inverse stick-on-top">
-  <div class="container-fluid">
+  <div class="container-fluid" id="nav">
     <div class="navbar-header">
-      <button
-        type="button"
-        class="navbar-toggle"
-        (click)="collapsed = !collapsed"
-      >
+      <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
         <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
       </button>
       <a routerLink="/" class="navbar-brand">Angular Demo</a>
@@ -14,33 +10,15 @@
       <ul class="nav navbar-nav">
         <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
         <li>
-          <a routerLink="/demo/forms/template" routerLinkActive="active"
-            >Forms</a
-          >
+          <a routerLink="/demo/forms/template" routerLinkActive="active">Forms</a>
         </li>
         <li>
-          <a routerLink="/demo/interaction/p2c" routerLinkActive="active"
-            >Component Interaction</a
-          >
+          <a routerLink="/demo/interaction/p2c" routerLinkActive="active">Component Interaction</a>
         </li>
         <li>
-          <a routerLink="/demo/interaction/services" routerLinkActive="active"
-            >Services</a
-          >
+          <a routerLink="/demo/interaction/services" routerLinkActive="active">Services</a>
         </li>
       </ul>
-      <!-- <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" role="button"
-            >Manage <span class="caret"></span
-          ></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Parent to child</a></li>
-            m
-            <li><a href="#">Child to parent</a></li>
-          </ul>
-        </li>
-      </ul> -->
     </div>
   </div>
 </nav>

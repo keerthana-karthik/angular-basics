@@ -208,6 +208,11 @@ ul.item-type {
 @media (min-width: 481px) and (max-width: 767px) {
     .product-item-wrapper {
         width: 98%;
+        height: 32rem;
+    }
+    .product-item {
+        width: 98%;
+        height: 30rem;
     }
 }
 

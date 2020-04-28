@@ -21,6 +21,7 @@ import { ServicesMoreComponent } from "./demo-details/key-snippets/services-more
 import { NoAuthMessageComponent } from "./auth/no-auth-message/no-auth-message.component";
 import { NoauthMessageMoreComponent } from "./demo-details/key-snippets/noauth-message-more/noauth-message-more.component";
 import { DemoService } from "./demo.service";
+import { WindowRef } from './window.ref.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { DemoService } from "./demo.service";
     NoauthMessageMoreComponent
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
-  providers: [],
+  providers: [WindowRef],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
