@@ -1,24 +1,25 @@
-import { Component, OnInit } from "@angular/core";
-import { WindowRef } from '../window.ref.service';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from "@angular/core";
+import { Router, NavigationStart, Event } from '@angular/router';
 
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.css"]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnChanges {
+  @Input() containerClicked: boolean;
   collapsed = true;
-  constructor(private winRef: WindowRef){
-    
-  }
-  ngOnInit(): void {
-    this.winRef.nativeWindow.addEventListener('click', function(e){   
-      if (document.getElementById('nav').contains(e.target)){
-        this.collapsed = false;
-      } else{
+  constructor(private router: Router){
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) {
         this.collapsed = true;
       }
     });
   }
-  
+  ngOnInit(): void {
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.containerClicked = changes.containerClicked.currentValue;
+    this.collapsed = this.containerClicked;
+  }
 }

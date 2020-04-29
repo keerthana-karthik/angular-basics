@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { DemoService } from "src/app/demo.service";
 import { Location } from "@angular/common";
 
@@ -16,7 +16,7 @@ export class ReactiveFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.reactiveForm = new FormGroup({
-      textbox: new FormControl(null),
+      textbox: new FormControl(null, Validators.required),
       chekbx: new FormControl(null),
       selectbox: new FormControl(null),
       radiobtn: new FormControl(null)

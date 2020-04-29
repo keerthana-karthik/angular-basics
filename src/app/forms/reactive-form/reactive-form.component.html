@@ -141,6 +141,7 @@
                 id="id_submit_template_form"
                 name="Submit"
                 value="Submit"
+                [disabled]="!reactiveForm.get('textbox').valid"
               />
             </div>
           </div>
