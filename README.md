@@ -18,7 +18,8 @@ Following is the covered with demo:
 
  - **Template Driven Form** - With Defaults, reset, tracking, validation and submission with preview on screen
  - **Reactive Form** - With Defaults, reset, tracking, validation and submission with preview on screen
- - **canDeactivate** - To use CanFormDeactivateGuard guard for a component to control navigation
  - **Parent to Child Data Transfer** - With @Input
  - **Child to Parent Data Transfer** - With @EventEmitter and @ViewChild
  - **Service and DI** - Connecting Form and Parent Child components used in Demo using @Injectable
+ - **canActivate** - To use AuthGuard
+ - **canDeactivate** - To use CanFormDeactivateGuard guard for a component to control navigation
