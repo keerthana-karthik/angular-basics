@@ -2,6 +2,7 @@ Basics of Angular
 ===================
 
 Angular basic concepts in one place with [Demo](https://angular-basics-demo.web.app/home)
+Covering Template Driven Form, Reactive Form, Parent to Child Data Transfer, Child to Parent Data and event Transfer, Services, Guard and basic routing.
 
 ---------------
 Running the app
